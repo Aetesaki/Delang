@@ -11,13 +11,14 @@
 # ##################################################
 #
 # * 2019-07-17 - v0.0.0  - First Creation
+# * 2019-07-18 - v1.0.0  - release version
 #
 # ##################################################
 # Initializing constants and variables
 # ##################################################
 # Setting constants
-version="v0.0.0"            # Sets version variable
-lastEdited="2019-07-17"     # Sets last edited variable" $scriptNamePath
+version="v1.0.0"            # Sets version variable
+lastEdited="2019-07-18"     # Sets last edited variable
 [ ! -t 0 ] && pipe=$(cat)   # if stdin is open dump stdin to $pipe
 # Declaring variables
 declare systolic asystolic temp
