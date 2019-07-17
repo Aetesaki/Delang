@@ -1,0 +1,126 @@
+#!/bin/bash
+# This script's framework was created using makescript 
+# version v1.0.0, dated 2019-06-01
+# Makescript and its accompanying scripts are copyrighted
+# by Aetesaki (c) 2018
+# 
+# mmhg2lunu (c) 2019 aetesaki
+#
+# ##################################################
+# HISTORY:
+# ##################################################
+#
+# * 2019-07-17 - v0.0.0  - First Creation
+# * 2019-07-17 - v0.0.1  - added piping
+# * 2019-07-17 - v1.0.0  - release version
+#
+# ##################################################
+# Initializing constants and variables
+# ##################################################
+# Setting constants
+version="v1.0.0"            # Sets version variable
+lastEdited="2019-07-17"     # Sets last edited variable" $scriptNamePath
+[ ! -t 0 ] && pipe=$(cat)   # if stdin is open dump stdin to $pipe
+# Declaring variables
+declare systolic asystolic
+# Declare all variables to be used in the script 
+# ##################################################
+# short help function
+# ##################################################
+shorthelp() {
+    # Edit as required
+    cat << EOF
+Usage: mmhg2lunu systolic/asystolic
+       mmhg2lunu --help
+       mmhg2lunu --version"
+EOF
+}
+# ##################################################
+# no arguments gives short help
+# ##################################################
+if [ "$#" == "0" ]; then
+	# check if $pipe is empty
+	if [ -z "$pipe" ]; then
+		# display shorthelp and exit
+		shorthelp
+		exit 1
+	else
+		# else set arguments to $pipe
+		set -- "$pipe"
+	fi
+fi 
+# ##################################################
+# -- help
+# ##################################################
+if [ "$1" == "--help" ]; then
+    shorthelp
+    # Write options and explanations
+    cat << EOF
+   --help                 Displays this text and exit.
+   --version              Displays the version of the script and exit.
+EOF
+    # Write information on arguments afterwards
+    # Write examples as required
+    exit 0
+fi 
+# ##################################################
+# -- version
+# ##################################################
+if [ "$1" == "--version" ]; then
+    cat << EOF
+mmhg2lunu ${version}, dated ${lastEdited}
+(c) 2019 aetesaki
+EOF
+    exit 0
+fi
+# ##################################################
+# Main section
+# ##################################################
+# Write your script here
+# Check for valid argument
+if [[ "$1" != *"/"* ]]; then
+	echo "No systolic/asystolic separator" >&2
+	exit 1
+fi
+# Grab the parts of the bloodpressure measurement
+systolic=$(dirname $1)
+asystolic=$(basename $1)
+# Check for valid systolis value
+if ! [[ $systolic =~ ^[0-9]+$ ]]; then
+	echo "Systolic measurement is not a number" >&2
+	exit 1
+fi
+# check for valid asystolic value
+if ! [[ $asystolic =~ ^[0-9]+$ ]]; then
+	echo "Asystolic measurement is not a number" >&2
+	exit 1
+fi
+# convert systolic
+# if systolic is above baseline
+if [[ $systolic -gt 125 ]]; then 
+	# then compute hypertention
+	systolic=$(awk "BEGIN {printf \"%.2f\n\", ($systolic-125)/4}")
+# else if systolic is below baseline
+elif [[ $systolic -lt 110 ]]; then
+	# then compute hypotention
+	systolic=$(awk "BEGIN {printf \"%.2f\n\", ($systolic-110)/4}")
+# else use baseline
+else
+	systolic=0
+fi
+# convert asystolic
+# if asystolic is above baseline
+if [[ $asystolic -gt 85 ]]; then 
+	# then compute hypotention
+	asystolic=$(awk "BEGIN {printf \"%.2f\n\", ($asystolic-85)/4}")
+# else if asystolic is below baseline
+elif [[ $asystolic -lt 75 ]]; then
+	# then compute hypotention
+	asystolic=$(awk "BEGIN {printf \"%.2f\n\", ($asystolic-75)/4}")
+# else use baseline
+else
+	asystolic=0
+fi
+
+# export bloodpressure in lunu
+echo "$systolic/$asystolic"
