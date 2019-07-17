@@ -1,0 +1,133 @@
+#!/bin/bash
+# This script's framework was created using makescript 
+# version v1.0.0, dated 2019-06-01
+# Makescript and its accompanying scripts are copyrighted
+# by Aetesaki (c) 2018
+# 
+# lunu2mmhg (c) 2019 aetesaki
+#
+# ##################################################
+# HISTORY:
+# ##################################################
+#
+# * 2019-07-17 - v0.0.0  - First Creation
+#
+# ##################################################
+# Initializing constants and variables
+# ##################################################
+# Setting constants
+version="v0.0.0"            # Sets version variable
+lastEdited="2019-07-17"     # Sets last edited variable" $scriptNamePath
+[ ! -t 0 ] && pipe=$(cat)   # if stdin is open dump stdin to $pipe
+# Declaring variables
+declare systolic asystolic temp
+# Declare all variables to be used in the script 
+# ##################################################
+# short help function
+# ##################################################
+shorthelp() {
+    # Edit as required
+    cat << EOF
+Usage: lunu2mmhg systolic/asystolic
+       lunu2mmhg --help
+       lunu2mmhg --version"
+EOF
+}
+# ##################################################
+# no arguments gives short help
+# ##################################################
+if [ "$#" == "0" ]; then
+	# check if $pipe is empty
+	if [ -z "$pipe" ]; then
+		# display shorthelp and exit
+		shorthelp
+		exit 1
+	else
+		# else set arguments to $pipe
+		set -- "$pipe"
+	fi
+fi 
+# ##################################################
+# -- help
+# ##################################################
+if [ "$1" == "--help" ]; then
+    shorthelp
+    # Write options and explanations
+    cat << EOF
+   --help                 Displays this text and exit.
+   --version              Displays the version of the script and exit.
+EOF
+    # Write information on arguments afterwards
+    # Write examples as required
+    exit 0
+fi 
+# ##################################################
+# -- version
+# ##################################################
+if [ "$1" == "--version" ]; then
+    cat << EOF
+lunu2mmhg ${version}, dated ${lastEdited}
+(c) 2019 aetesaki
+EOF
+    exit 0
+fi
+# ##################################################
+# Main section
+# ##################################################
+# Write your script here
+# Check for valid argument
+if [[ "$1" != *"/"* ]]; then
+	echo "No systolic/asystolic separator" >&2
+	exit 1
+fi
+# Grab the parts of the bloodpressure measurement
+systolic=$(echo "$1" | cut -d"/" -f1)
+asystolic=$(echo "$1" | cut -d"/" -f2)
+
+# Check for valid systolis value
+if ! [[ $systolic =~ ^[+-]?[0-9]+([.][0-9]+)?$ ]]; then
+	echo "Systolic measurement is not a number" >&2
+	exit 1
+fi
+# check for valid asystolic value
+if ! [[ $asystolic =~ ^[+-]?[0-9]+([.][0-9]+)?$ ]]; then
+	echo "Asystolic measurement is not a number" >&2
+	exit 1
+fi
+
+# convert systolic
+# convert systolic to testable value
+temp=$(awk "BEGIN {print ($systolic*100)}")
+# if systolic is 0
+if [[ $systolic = 0 ]]; then
+	# return normal
+	systolic="normal"
+# else if systolic is positive
+elif [[ $temp -gt 0 ]]; then
+	# calculate hypertension
+	systolic=$(awk "BEGIN {printf \"%.2f\n\", ($systolic*4)+125}")
+# else if systolic is negative
+elif [[ $temp -lt 0 ]]; then
+	# calculate hypotension
+	systolic=$(awk "BEGIN {printf \"%.2f\n\", ($systolic*4)+110}")
+fi
+
+# convert asystolic
+# convert systolic to testable value
+temp=$(awk "BEGIN {print ($asystolic*100)}")
+# if asystolic is 0
+if [[ $asystolic = 0 ]]; then
+	# return normal
+	asystolic="normal"
+# else if systolic is positive
+elif [[ $temp -gt 0 ]]; then
+	# calculate hypertension
+	asystolic=$(awk "BEGIN {printf \"%.2f\n\", ($asystolic*4)+85}")
+# else if systolic is negative
+elif [[ $temp -lt 0 ]]; then
+	# calculate hypotension
+	asystolic=$(awk "BEGIN {printf \"%.2f\n\", ($asystolic*4)+75}")
+fi
+
+# export bloodpressure in mmHg
+echo "$systolic/$asystolic"
