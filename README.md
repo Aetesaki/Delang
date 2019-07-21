@@ -95,9 +95,13 @@ fahrenheit to peu and back again using the following commands:
 This method is called piping, and is common in Linux
 
 ##### Common temperatures in peu
-* Water freezing: 0°C = 32°F = -14.4 peu
-* Body temperature of a human: 37°C = 98.6°F = 15.2 peu
 * Water boiling at sea level: 100°C = 212°F = 65.6 peu
+* Average air temperature in shadow, meassure in Tellmarch on the
+hottest day of the year: 43°C = 109.4°F = 20 peu
+* Average water temperature on the coldest day in the Tripoola lagoon in
+Illte: 18°C = 64.4°F = 0 peu
+* Body temperature of a human: 37°C = 98.6°F = 15.2 peu
+* Water freezing: 0°C = 32°F = -14.4 peu
 * -40°: -40°C = -40°F = -46.4 peu
 * Absolute zero: -273.15°C = -459.67°F = -232.92 peu
 
