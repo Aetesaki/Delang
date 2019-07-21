@@ -21,7 +21,7 @@ To use these scripts you need to have a fuctioning bash environment AND a git cl
 * When the Linux distro has been installed, open it and follow the onscreen setup instructions
 
 ### Installing
-To download these scripts open a terminal, of if you are using windows, open the previously installed Linux distro
+To download these scripts open a terminal, of if you are using Windows, open the previously installed Linux distro
 
 * mkdir git
 * cd git
@@ -29,6 +29,12 @@ To download these scripts open a terminal, of if you are using windows, open the
 
 To make the scripts available use this command
 * echo "$HOME/git/Delang:$PATH" >> .bashrc
+
+### Keeping the scripts up to date
+To keep the scripts up to date with the git repository, you should periodically pull the repository. If you use these scripts seldom, please do that before running any of the scripts.
+
+Open a terminal, or if you are using Windows run the previously installed Linux distro
+* cd git/Delang && git pull | cd
 
 ## Scripts
 ### Converters
