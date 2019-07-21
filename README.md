@@ -104,7 +104,9 @@ This method is called piping, and is common in Linux
 * 18°C = 64.4°F = 0 peu– Average water temperature on the coldest day in
  the Tripoola lagoon in Illte 
 * 0°C = 32°F = -14.4 peu – Triple point of water (aka freezing point) 
-* -40°C = -40°F = -46.4 peu
+* -40°C = -40°F = -46.4 peu – Celsius equals Fahrenheit
+* -46.39°C = -51.51°F = -51.51 peu – Fahrenheit equals peu
+* -72°C = -97.6°F = -72 peu – Celsius equals peu
 * −89.2 °C = −128.6 °F = -85.76 peu – Lowest ground level temperature on
 Earth.
 * -273.15°C = -459.67°F = -232.92 peu – Absolute zero
