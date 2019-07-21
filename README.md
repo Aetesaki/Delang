@@ -65,6 +65,17 @@ For version information, use the --version option.
 #### Blood pressure converters
 * mmhg2lunu – Convert mmHg to lunu
 * lunu2mmhg – Convert lunu to mmHg
+
+##### Note
+Normal blood pressure in lunu, 0/0, is a blood pressure within the range
+of 110-125/75-85 mmHg. Any number within that range will be converted to
+0/0 lunu. On the flip side, 0/0 lunu will be converted to normal/normal.
+
+Any hypertension is converted to positive numbers in lunu, while any
+hypotension is converted to negative numbers in lunu.
+
+1 lunu = 4 millimeter = 0.16 inches
+
 #### Temperature converters
 * degc2peu – Convert degree celcius to peu
 * peu2degc – Convert peu to degree celcius
