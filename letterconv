@@ -1,0 +1,176 @@
+#!/bin/bash
+# This script's framework was created using makescript 
+# version v1.0.3, dated 2019-07-19
+# Makescript and its accompanying scripts are copyrighted
+# by Aetesaki (c) 2018
+# 
+# letterconv (c) 2019 aetesaki
+#
+# ##################################################
+# HISTORY:
+# ##################################################
+#
+# * 2019-07-21 - v0.0.0  - First Creation
+# * 2019-07-21 - v1.0.0  - First release
+#
+# ##################################################
+# Initializing constants and variables
+# ##################################################
+# Setting constants
+version="v1.0.0"            # Sets version variable
+lastEdited="2019-07-21"     # Sets last edited variable
+[ ! -t 0 ] && pipe=$(cat)   # if stdin is open dump stdin to $pipe
+# Declaring variables
+declare conv # converted letter
+# Declare array
+declare -A letter
+# Declare all variables to be used in the script 
+# ##################################################
+# short help function
+# ##################################################
+shorthelp() {
+    # Edit as required
+    cat << EOF
+Usage: letterconv [letter]
+       letterconv --help
+       letterconv --version"
+EOF
+}
+# ##################################################
+# no arguments gives short help
+# ##################################################
+# if number of arguments is 0
+if [ "$#" == "0" ]; then
+	# if length of $pipe is 0
+	if [ -z "$pipe" ]; then
+		# display shorthelp and exit
+		shorthelp
+		exit 1
+	else
+		# else set arguments to $pipe
+		set -- "$pipe"
+	fi
+fi 
+# ##################################################
+# -- help
+# ##################################################
+# if the first argument is --help
+if [ "$1" == "--help" ]; then
+    shorthelp
+    # Write options and explanations
+    cat << EOF
+   --help                 Displays this text and exit.
+   --version              Displays the version of the script and exit.
+   
+   Note that the delang letters L, Z, and z, has to be prefixed with
+   del, and included within quote marks
+   
+   examples:
+   $ letterconv L
+   Л
+   $ letterconv "del L"
+   R
+   
+EOF
+    # Write information on arguments afterwards
+    # Write examples as required
+    exit 0
+fi 
+# ##################################################
+# -- version
+# ##################################################
+# if the first argument is --version
+if [ "$1" == "--version" ]; then
+	# display the version text
+    cat << EOF
+letterconv ${version}, dated ${lastEdited}
+(c) 2019 aetesaki
+EOF
+    exit 0
+fi
+# ##################################################
+# Array setup section
+# ##################################################
+# Latin to Delang
+letter["A"]="А"; letter["a"]="а"
+letter["AU"]="Ҩ"; letter["Au"]="Ҩ"; letter["au"]="ҩ"
+letter["B"]="Б"; letter["b"]="б"
+letter["C"]="З"; letter["c"]="з"
+letter["D"]="Δ"; letter["d"]="δ"
+letter["E"]="Е"; letter["e"]="е"
+letter["EU"]="Є"; letter["Eu"]="Є"; letter["eu"]="є"
+letter["F"]="F"; letter["f"]="ƒ"
+letter["G"]="Г"; letter["g"]="г"
+letter["H"]="Ƕ"; letter["h"]="ƕ"
+letter["I"]="І"; letter["i"]="і"
+letter["J"]="Ј"; letter["j"]="ј"
+letter["K"]="К"; letter["k"]="к"
+letter["L"]="Л"; letter["l"]="л"
+letter["LL"]="Љ"; letter["Ll"]="Љ"; letter["ll"]="љ"
+letter["M"]="М"; letter["m"]="м"
+letter["N"]="Н"; letter["n"]="н"
+letter["NG"]="Њ"; letter["Ng"]="Њ"; letter["ng"]="њ"
+letter["O"]="О"; letter["o"]="о"
+letter["P"]="П"; letter["p"]="п"
+letter["Q"]="Ь"; letter["q"]="Ь"
+letter["QJ"]="Ҍ"; letter["Qj"]="Ҍ"; letter["qj"]="ҍ"
+letter["R"]="del L"; letter["r"]="ł"
+letter["S"]="Ѕ"; letter["s"]="ѕ"
+letter["SJ"]="del Z"; letter["Sj"]="del Z"; letter["sj"]="del z"
+letter["T"]="Т"; letter["t"]="т"
+letter["U"]="И"; letter["u"]="и"
+letter["V"]="В"; letter["v"]="в"
+letter["W"]="Ѡ"; letter["w"]="ѡ"
+letter["X"]="Р"; letter["x"]="р"
+letter["Y"]="Y"; letter["y"]="y"
+letter["Z"]="С"; letter["z"]="с"
+letter["ZJ"]="Ҫ"; letter["Zj"]="Ҫ"; letter["zj"]="ҫ"
+
+# Delang to Latin
+letter["А"]="A"; letter["а"]="a"
+letter["Ҩ"]="Au"; letter["ҩ"]="au"
+letter["Б"]="B"; letter["б"]="b"
+letter["З"]="C"; letter["з"]="c"
+letter["Δ"]="D"; letter["δ"]="d"
+letter["Е"]="E"; letter["е"]="e"
+letter["Є"]="Eu"; letter["є"]="eu"
+letter["F"]="F"; letter["ƒ"]="f"
+letter["Г"]="G"; letter["г"]="g"
+letter["Ƕ"]="H"; letter["ƕ"]="h"
+letter["І"]="I"; letter["і"]="i"
+letter["Ј"]="J"; letter["ј"]="j"
+letter["К"]="K"; letter["к"]="k"
+letter["Л"]="L"; letter["л"]="l"
+letter["Љ"]="Ll"; letter["љ"]="ll"
+letter["М"]="M"; letter["м"]="m"
+letter["Н"]="N"; letter["н"]="n"
+letter["Њ"]="Ng"; letter["њ"]="ng"
+letter["О"]="O"; letter["о"]="o"
+letter["П"]="P"; letter["п"]="p"
+letter["Ь"]="Q"; letter["Ь"]="q"
+letter["Ҍ"]="Qj"; letter["ҍ"]="qj"
+letter["del L"]="R"; letter["ł"]="r"
+letter["Ѕ"]="S"; letter["ѕ"]="s"
+letter["del Z"]="Sj"; letter["del z"]="sj"
+letter["Т"]="T"; letter["т"]="t"
+letter["И"]="U"; letter["и"]="u"
+letter["В"]="v"; letter["в"]="v"
+letter["Ѡ"]="W"; letter["ѡ"]="w"
+letter["Р"]="X"; letter["р"]="x"
+letter["Y"]="y"; letter["y"]="y"
+letter["С"]="Z"; letter["с"]="z"
+letter["Ҫ"]="Zj"; letter["ҫ"]="zj"
+
+# ##################################################
+# Main section
+# ##################################################
+# Write your script here
+# convert the letter
+conv=${letter["$1"]}
+# if $conv is empty
+if [ -z $conv ]; then
+	# display error message and exit
+	echo "$1 is not a valid letter." >&2
+	exit 1
+fi
+echo $conv
