@@ -61,6 +61,16 @@ scripts.
 For version information, use the --version option.
 
 ## Scripts
+### Lingual scripts
+#### letterconv
+
+This script converts latin letters to delang letters and vice versa.
+
+Note that you need to add a del prefix when converting the delang 
+letters L, Z, and z, and both must be inside quote marks.
+* letterconv "del L"
+
+
 ### Converters
 #### Blood pressure converters
 * mmhg2lunu – Convert mmHg to lunu
