@@ -7,7 +7,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To use these scripts you need to have a fuctioning bash environment AND a git cloner on your system, preferabley you should have a running linux system as neither MacOS or Windows have both bash and git installed as default.
+To use these scripts you need to have a fuctioning bash environment AND a git cloner on your system, preferably you should have a running linux system as neither MacOS or Windows have both bash and git installed as default.
 
 #### Installing Linux on Windows
 * Click the start button, and select settings
@@ -16,9 +16,19 @@ To use these scripts you need to have a fuctioning bash environment AND a git cl
 * Restart the computer
 * After restart, open Windows Store
 * Search for Linux
-* Open one of the avaiable linux distros (making sure you actually open an actuall linux distro, as not all search result are valid)
-* Install your preferred linux distro
-* When the linux distro has been installed, open it and follow the onscreen setup instructions
+* Open one of the avaiable Linux distros (make sure you actually open an actual Linux distro, as not all search result are valid)
+* Install your preferred Linux distro
+* When the Linux distro has been installed, open it and follow the onscreen setup instructions
+
+### Installing
+To download these scripts open a terminal, of if you are using windows, open the previously installed Linux distro
+
+* mkdir git
+* cd git
+* git clone https://github.com/Aetesaki/Delang.git
+
+To make the scripts available use this command
+* echo "$HOME/git/Delang:$PATH" >> .bashrc
 
 ## Scripts
 ### Converters
