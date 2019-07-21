@@ -15,13 +15,14 @@
 # * 2019-07-19 - v0.0.2  - renaming script variable to degc2degf
 # * 2019-07-19 - v0.0.3  - converting degc2degf to degctopeu
 # * 2019-07-19 - v0.0.4  - converting degc2peu to peu2degc
+# * 2019-07-21 - v1.0.0  - release version
 #
 # ##################################################
 # Initializing constants and variables
 # ##################################################
 # Setting constants
-version="v0.0.4"            # Sets version variable
-lastEdited="2019-07-19"     # Sets last edited variable" $scriptNamePath
+version="v1.0.0"            # Sets version variable
+lastEdited="2019-07-21"     # Sets last edited variable
 [ ! -t 0 ] && pipe=$(cat)   # if stdin is open dump stdin to $pipe
 # Declaring variables
 declare peu celcius	# temperature variables
@@ -32,7 +33,7 @@ declare peu celcius	# temperature variables
 shorthelp() {
     # Edit as required
     cat << EOF
-Usage: peu2degc [celsius]
+Usage: peu2degc [peu]
        peu2degc --help
        peu2degc --version"
 EOF
@@ -79,7 +80,7 @@ fi
 # Main section
 # ##################################################
 # Write your script here
-# copy first argument to $celcius
+# copy first argument to $peu
 peu=$1
 # Check for valid argument
 if ! [[ $peu =~ ^[+-]?[0-9]+([.][0-9]+)?$ ]]; then
@@ -87,7 +88,7 @@ if ! [[ $peu =~ ^[+-]?[0-9]+([.][0-9]+)?$ ]]; then
 	exit 1
 fi
 
-# convert celsius to fahrenheit
+# convert peu to celsius
 celsius=$(awk "BEGIN {printf \"%.2f\n\", ($peu/0.8)+18}")
 
 # echo the converted temperature
