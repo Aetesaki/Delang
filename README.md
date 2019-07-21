@@ -28,7 +28,8 @@ default.
 onscreen setup instructions
 
 ### Installing
-To download these scripts open a terminal, of if you are using Windows, open the previously installed Linux distro
+To download these scripts open a terminal, of if you are using Windows, 
+open the previously installed Linux distro
 
 * mkdir git
 * cd git
@@ -38,14 +39,21 @@ To make the scripts available use this command
 * echo "$HOME/git/Delang:$PATH" >> .bashrc
 
 ### Keeping the scripts up to date
-To keep the scripts up to date with the git repository, you should periodically pull the repository. If you use these scripts seldom, please do that before running any of the scripts.
+To keep the scripts up to date with the git repository, you should 
+periodically pull the repository. If you use these scripts seldom, 
+please do that before running any of the scripts.
 
-Open a terminal, or if you are using Windows, run the previously installed Linux distro
+Open a terminal, or if you are using Windows, run the previously 
+installed Linux distro
 * cd git/Delang && git pull | cd
 
 ## How to use the scripts
-To use the scripts, open a terminal, or if you are using Windows, run the previously installed Linux distro, and type the name of the script, and the script will give you a short description on how to use it. 
+To use the scripts, open a terminal, or if you are using Windows, run 
+the previously installed Linux distro, and type the name of the script, 
+and the script will give you a short description on how to use it. 
+
 For more information, you can use the --help option available in all scripts. 
+
 For version information, use the --version option.
 
 ## Scripts
