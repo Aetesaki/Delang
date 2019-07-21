@@ -96,6 +96,7 @@ This method is called piping, and is common in Linux
 
 ##### Common temperatures in peu
 * 100°C = 212°F = 65.6 peu – Boilingpoint of water at sea level
+* 54°C = 129.2°F = 28.8 peu – Highest air temperature on Earth
 * 43°C = 109.4°F = 20 peu – Average air temperature in shadow, meassured
  in Tellmarsh on the hottest day of the year
 * 37°C = 98.6°F = 15.2 peu – Body temperature of a human
@@ -103,5 +104,7 @@ This method is called piping, and is common in Linux
  the Tripoola lagoon in Illte 
 * 0°C = 32°F = -14.4 peu – Triple point of water (aka freezing point) 
 * -40°C = -40°F = -46.4 peu
+* −89.2 °C = −128.6 °F = -85.76 peu – Lowest ground level temperature on
+Earth.
 * -273.15°C = -459.67°F = -232.92 peu – Absolute zero
 
