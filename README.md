@@ -1,5 +1,6 @@
 # Delang
-a set of scripts for the conlang Delang and its Illomi culture
+A set of scripts for the constructed language Delang and its Illomi 
+culture
 
 ## Getting Started
 
