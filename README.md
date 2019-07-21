@@ -9,7 +9,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 To use these scripts you need to have a fuctioning bash environment AND a git cloner on your system, preferabley you should have a running linux system as neither MacOS or Windows have both bash and git installed as default.
 
-
+#### Installing Linux on Windows
+* Click the start button, and select settings
+* Search for and run "Turn Windows Features On Or Off"
+* In the window, search for and  enable “Windows Subsystem for Linux”
+* Restart the computer
+* After restart, open Windows Store
+* Search for Linux
+* Open one of the avaiable linux distros (making sure you actually open an actuall linux distro, as not all search result are valid)
+* Install your preferred linux distro
+* When the linux distro has been installed, open it and follow the onscreen setup instructions
 
 ## Scripts
 ### Converters
