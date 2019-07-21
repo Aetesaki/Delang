@@ -79,6 +79,6 @@ following commands:
 Close your terminal, and reopen it. Now you will be able to convert
 fahrenheit to peu and back again using the following commands:
 * degf2degc 100 | degc2peu – Converts 100°F to 15.82 peu
-* peu2degc 15.82 | degc2degf – Converts 15.82 peu to 100°F
+* peu2degc 15.82 | degc2degf – Converts 15.82 peu to 99.99°F
 
 This method is called piping, and is common in Linux
