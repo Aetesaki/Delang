@@ -37,7 +37,9 @@ Open a terminal, or if you are using Windows, run the previously installed Linux
 * cd git/Delang && git pull | cd
 
 ## How to use the scripts
-To use the scripts, open a terminal, or if you are using Windows, run the previously installed Linux distro, and type the name of the script, and the script will give you a short description on how to use it. For more information, you can use the --help option available in all scripts. For version information, use the --version option.
+To use the scripts, open a terminal, or if you are using Windows, run the previously installed Linux distro, and type the name of the script, and the script will give you a short description on how to use it. 
+For more information, you can use the --help option available in all scripts. 
+For version information, use the --version option.
 
 ## Scripts
 ### Converters
