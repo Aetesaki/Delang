@@ -98,9 +98,9 @@ This method is called piping, and is common in Linux
 * 100°C = 212°F = 65.6 peu – Boilingpoint of water at sea level
 * 43°C = 109.4°F = 20 peu – Average air temperature in shadow, meassured
  in Tellmarsh on the hottest day of the year
+* 37°C = 98.6°F = 15.2 peu – Body temperature of a human
 * 18°C = 64.4°F = 0 peu– Average water temperature on the coldest day in
  the Tripoola lagoon in Illte 
-* 37°C = 98.6°F = 15.2 peu – Body temperature of a human
 * 0°C = 32°F = -14.4 peu – Triple point of water (aka freezing point) 
 * -40°C = -40°F = -46.4 peu
 * -273.15°C = -459.67°F = -232.92 peu – Absolute zero
