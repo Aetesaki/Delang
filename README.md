@@ -61,7 +61,7 @@ scripts.
 For version information, use the --version option.
 
 ## Scripts
-### Lingual scripts
+### Linguistic scripts
 #### letterconv
 
 This script converts latin letters to delang letters and vice versa.
