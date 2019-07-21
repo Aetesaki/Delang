@@ -95,9 +95,9 @@ fahrenheit to peu and back again using the following commands:
 This method is called piping, and is common in Linux
 
 ##### Common temperatures in peu
-* 100°C = 212°F = 65.6 peu – Water boiling at sea level
+* 100°C = 212°F = 65.6 peu – Boilingpoint of water at sea level
 * 43°C = 109.4°F = 20 peu – Average air temperature in shadow, meassured
- in Tellmarch on the hottest day of the year
+ in Tellmarsh on the hottest day of the year
 * 18°C = 64.4°F = 0 peu– Average water temperature on the coldest day in
  the Tripoola lagoon in Illte 
 * 37°C = 98.6°F = 15.2 peu – Body temperature of a human
