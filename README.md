@@ -38,17 +38,20 @@ open the previously installed Linux distro
 To make the scripts available use this command
 * echo "$HOME/git/Delang:$PATH" >> .bashrc
 
+At this point you should close your terminal, and reopen it to use the 
+scripts
+
 ### Keeping the scripts up to date
 To keep the scripts up to date with the git repository, you should 
 periodically pull the repository. If you use these scripts seldom, 
 please do that before running any of the scripts.
 
-Open a terminal, or if you are using Windows, run the previously 
+Open a terminal, or if you are using Windows, open the previously 
 installed Linux distro
 * cd git/Delang && git pull | cd
 
 ## How to use the scripts
-To use the scripts, open a terminal, or if you are using Windows, run 
+To use the scripts, open a terminal, or if you are using Windows, open 
 the previously installed Linux distro, and type the name of the script, 
 and the script will give you a short description on how to use it. 
 
