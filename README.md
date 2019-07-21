@@ -55,7 +55,8 @@ To use the scripts, open a terminal, or if you are using Windows, open
 the previously installed Linux distro, and type the name of the script, 
 and the script will give you a short description on how to use it. 
 
-For more information, you can use the --help option available in all scripts. 
+For more information, you can use the --help option available in all 
+scripts. 
 
 For version information, use the --version option.
 
@@ -63,7 +64,21 @@ For version information, use the --version option.
 ### Converters
 #### Blood pressure converters
 * mmhg2lunu – Convert mmHg to lunu
-* lunu2mmhg – convert lunu to mmHg
+* lunu2mmhg – Convert lunu to mmHg
 #### Temperature converters
 * degc2peu – Convert degree celcius to peu
 * peu2degc – Convert peu to degree celcius
+
+##### Fahrenheit support
+To convert from fahrenheit to peu, clone RandomScripts using the 
+following commands:
+* cd ~/git
+* git clone https://github.com/Aetesaki/RandomScripts.git
+* echo "$HOME/git/Delang:$PATH" >> .bashrc
+
+Close your terminal, and reopen it. Now you will be able to convert
+fahrenheit to peu and back again using the following commands:
+* degf2degc 100 | degc2peu – Converts 100°F to 15.82 peu
+* peu2degc 15.82 | degc2degf – Converts 15.82 peu to 100°F
+
+This method is called piping, and is common in Linux
