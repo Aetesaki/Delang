@@ -74,7 +74,7 @@ To convert from fahrenheit to peu, clone RandomScripts using the
 following commands:
 * cd ~/git
 * git clone https://github.com/Aetesaki/RandomScripts.git
-* echo "$HOME/git/Delang:$PATH" >> .bashrc
+* echo "$HOME/git/RandomScripts:$PATH" >> .bashrc
 
 Close your terminal, and reopen it. Now you will be able to convert
 fahrenheit to peu and back again using the following commands:
