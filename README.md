@@ -9,7 +9,7 @@ your local machine for your entertainment or curiousity.
 
 ### Prerequisites
 
-To use these scripts you need to have a fuctioning bash environment AND 
+To use these scripts you need to have a functioning bash environment AND 
 a git cloner on your system, preferably you should have a running linux 
 system as neither MacOS or Windows have both bash and git installed as 
 default.
@@ -36,7 +36,7 @@ open the previously installed Linux distro
 * git clone https://github.com/Aetesaki/Delang.git
 
 To make the scripts available use this command
-* echo "$HOME/git/Delang:$PATH" >> .bashrc
+* echo "PATH=$HOME/git/Delang:$PATH" >> .bashrc
 
 At this point you should close your terminal, and reopen it to use the 
 scripts
@@ -85,7 +85,7 @@ To convert from fahrenheit to peu, clone RandomScripts using the
 following commands:
 * cd ~/git
 * git clone https://github.com/Aetesaki/RandomScripts.git
-* echo "$HOME/git/RandomScripts:$PATH" >> .bashrc
+* echo "PATH=$HOME/git/RandomScripts:$PATH" >> .bashrc
 
 Close your terminal, and reopen it. Now you will be able to convert
 fahrenheit to peu and back again using the following commands:
