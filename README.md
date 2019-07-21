@@ -82,3 +82,11 @@ fahrenheit to peu and back again using the following commands:
 * peu2degc 15.82 | degc2degf – Converts 15.82 peu to 99.99°F
 
 This method is called piping, and is common in Linux
+
+##### Common temperatures in peu
+* Water freezing: 0°C = 32°F = -14.4 peu
+* Body temperature of a human: 37°C = 98.6°F = 15.2 peu
+* Water boiling at sea level: 100°C = 212°F = 65.6 peu
+* -40°: -40°C = -40°F = -46.4 peu
+* Absolute zero: -273.15°C = -459.67°F = -232.92 peu
+
