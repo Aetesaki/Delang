@@ -70,6 +70,16 @@ Note that you need to add a del prefix when converting the delang
 letters L, Z, and z, and both must be inside quote marks.
 * letterconv "del L"
 
+#### pwmcconv
+
+This script convert delang letters to Illomi Pulse Width Modulation
+Code, a code that is akin to Samuel Morse's code.
+
+This script should be used together with letterconv
+* letterconv au | pwmcconv
+
+For more information about the script, please use
+* pwmcconv --help
 
 ### Converters
 #### Blood pressure converters
