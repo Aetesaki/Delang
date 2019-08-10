@@ -94,7 +94,7 @@ of 110-125/75-85 mmHg. Any number within that range will be converted to
 Any hypertension is converted to positive numbers in lunu, while any
 hypotension is converted to negative numbers in lunu.
 
-1 lunu = 4 millimeter = 0.16 inches
+1 lunu = 3 millimeter = 0.12 inches
 
 #### Temperature converters
 * degc2peu – Convert degree celcius to peu
