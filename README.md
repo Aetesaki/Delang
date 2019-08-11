@@ -31,12 +31,12 @@ onscreen setup instructions
 To download these scripts open a terminal, of if you are using Windows, 
 open the previously installed Linux distro
 
-* mkdir git
-* cd git
+* mkdir ~/git
+* cd ~/git
 * git clone https://github.com/Aetesaki/Delang.git
 
 To make the scripts available use this command
-* echo "PATH=$HOME/git/Delang:$PATH" >> .bashrc
+* echo "PATH=$HOME/git/Delang:$PATH" >> ~/.bashrc
 
 At this point you should close your terminal, and reopen it to use the 
 scripts
@@ -48,7 +48,7 @@ please do that before running any of the scripts.
 
 Open a terminal, or if you are using Windows, open the previously 
 installed Linux distro
-* cd git/Delang && git pull | cd
+* cd ~/git/Delang && git pull | cd
 
 ## How to use the scripts
 To use the scripts, open a terminal, or if you are using Windows, open 
@@ -105,7 +105,7 @@ To convert from fahrenheit to peu, clone RandomScripts using the
 following commands:
 * cd ~/git
 * git clone https://github.com/Aetesaki/RandomScripts.git
-* echo "PATH=$HOME/git/RandomScripts:$PATH" >> .bashrc
+* echo "PATH=$HOME/git/RandomScripts:$PATH" >> ~/.bashrc
 
 Close your terminal, and reopen it. Now you will be able to convert
 fahrenheit to peu and back again using the following commands:
@@ -117,11 +117,11 @@ This method is called piping, and is common in Linux
 ##### Common temperatures in peu
 * 100°C = 212°F = 65.6 peu – Boilingpoint of water at sea level
 * 54°C = 129.2°F = 28.8 peu – Highest air temperature on Earth
-* 51.88°C = 125.38°F = 27.1 – Highest air temperature in Illte
+* 51.88°C = 125.38°F = 27.1 peu – Highest air temperature in Illte
 * 43°C = 109.4°F = 20 peu – Average air temperature
  in Tellmarsh on the hottest day of the year
 * 37°C = 98.6°F = 15.2 peu – Body temperature of a human
-* 18°C = 64.4°F = 0 peu– Average water temperature on the coldest day in
+* 18°C = 64.4°F = 0 peu – Average water temperature on the coldest day in
  the Tripoola lagoon in Illte 
 * 0°C = 32°F = -14.4 peu – Triple point of water (aka freezing point) 
 * -40°C = -40°F = -46.4 peu – Celsius equals Fahrenheit
